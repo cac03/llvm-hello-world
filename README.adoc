@@ -1,9 +1,26 @@
-# llvm-hello-world
+= llvm-hello-world
 
-## How to run
+== Prerequisites
 
-. Ensure that you have `clang` installed
+At least 15'th versions of `clang`, `llc`, `lli` are required.
 
+=== Ubuntu 22.04
+
+Run:
+
+[source,bash]
+----
+# apt-get install clang-15
+----
+
+Then `clang` would be available as `clang-15` `llc` as `llc-15`, and `lli` as `lli-15`
+
+=== Arch Linux
+
+[source,bash]
+----
+# pacman -S clang llvm
+----
 
 To run with interpreter use:
 
@@ -12,6 +29,11 @@ To run with interpreter use:
 $ make hello-world-run
 ----
 
+=== Other distributions
+
+You have to figure out yourself 🙂
+
+== Running
 
 To run as a native executable use:
 
@@ -20,3 +42,20 @@ To run as a native executable use:
 $ make hello-world-run-executable
 ----
 
+To run using an interpreter use:
+
+[source,bash]
+----
+$ make hello-world-run
+----
+
+[NOTE]
+====
+In Ubuntu `lli`, `clang`, and `llc` must have version suffix.
+So you can use make variables to override the default ones.
+
+[source,bash]
+----
+$ make LLI=lli-15 LLC=llc-15 CLANG=clang-15 hello-world-run
+----
+====
