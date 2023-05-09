@@ -1,2 +1,22 @@
 # llvm-hello-world
 
+## How to run
+
+. Ensure that you have `clang` installed
+
+
+To run with interpreter use:
+
+[source,bash]
+----
+$ make hello-world-run
+----
+
+
+To run as a native executable use:
+
+[source,bash]
+----
+$ make hello-world-run-executable
+----
+
